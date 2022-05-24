@@ -4,7 +4,6 @@ import sys
 import time
 import spamwatch
 import httpx
-import aiohttp
 import telegram.ext as tg
 
 from pyrogram import Client, errors
@@ -17,8 +16,6 @@ from odmantic import AIOEngine
 from pymongo import MongoClient
 from pymongo.errors import ServerSelectionTimeoutError
 from redis import StrictRedis
-from Python_ARQ import ARQ
-from aiohttp import ClientSession
 from telegraph import Telegraph
 from telegram import Chat
 
@@ -259,11 +256,6 @@ mongodb = MongoClient(MONGO_DB_URI, 27017)[MONGO_DB]
 motor = motor_asyncio.AsyncIOMotorClient(MONGO_DB_URI)
 db = motor[MONGO_DB]
 engine = AIOEngine(motor, MONGO_DB)
-print("[INFO]: INITIALZING AIOHTTP SESSION")
-aiohttpsession = ClientSession()
-# ARQ Client
-print("[INFO]: INITIALIZING ARQ CLIENT")
-arq = ARQ("https://thearq.tech", "YIECCC-NAJARO-OLLREW-SJSRIP-ARQ", aiohttpsession)
 ubot = TelegramClient(StringSession(STRING_SESSION), API_ID, API_HASH)
 timeout = httpx.Timeout(40)
 http = httpx.AsyncClient(http2=True, timeout=timeout)
