@@ -230,9 +230,7 @@ http = httpx.AsyncClient(http2=True, timeout=timeout)
 mongo_client = MongoClient(MONGO_DB_URI)
 dispatcher = updater.dispatcher
 aiohttpsession.close()
-await aiohttpsession.close()
 ClientSession.close()
-await ClientSession.close()
 
 DRAGONS = list(DRAGONS) + list(DEV_USERS)
 DEV_USERS = list(DEV_USERS)
