@@ -117,6 +117,7 @@ if ENV:
     DEBUG = bool(os.environ.get('IS_DEBUG', False))
     REDIS_URL = os.environ.get("REDIS_URL", None) # REDIS URL (From:- Heraku & Redis)
     OWNER_NAME = os.environ.get("OWNER_NAME", None)
+    STRING_SESSION = os.environ.get("STRING_SESSION", None)
 
     try:
         BL_CHATS = set(int(x) for x in os.environ.get('BL_CHATS', "").split())
@@ -195,6 +196,7 @@ else:
     TEMP_DOWNLOAD_DIRECTORY = Config.TEMP_DOWNLOAD_DIRECTORY
     ERROR_LOGS = Config.ERROR_LOGS
     STRICT_GMUTE = Config.STRICT_GMUTE
+    STRING_SESSION = Comfig.STRING_SESSION
 
     try:
         BL_CHATS = set(int(x) for x in Config.BL_CHATS or [])
