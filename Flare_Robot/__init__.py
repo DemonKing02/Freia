@@ -226,8 +226,7 @@ updater = tg.Updater(TOKEN, workers=WORKERS, use_context=True)
 telethn = TelegramClient("𝓐𝓴𝓮𝓷𝓸", API_ID, API_HASH)
 pbot = Client("Akeno00bot", api_id=API_ID, api_hash=API_HASH, bot_token=TOKEN)
 session = aiohttp.ClientSession()
-# use the session here 
-session.close()
+aiohttpsession.close()
 ubot = TelegramClient(StringSession(STRING_SESSION), API_ID, API_HASH)
 mongo_client = MongoClient(MONGO_DB_URI)
 dispatcher = updater.dispatcher
