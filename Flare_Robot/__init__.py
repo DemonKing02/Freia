@@ -229,7 +229,7 @@ timeout = httpx.Timeout(40)
 http = httpx.AsyncClient(http2=True, timeout=timeout)
 mongo_client = MongoClient(MONGO_DB_URI)
 dispatcher = updater.dispatcher
-aiohttpsession = await aiohttpsession.close()
+aiohttpsession = aiohttpsession.close()
 arq.close()
 ubot.close()
 ClientSession.close()
