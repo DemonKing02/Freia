@@ -220,13 +220,11 @@ print("Scanning AIO http session")
 aiohttpsession = ClientSession() 
 
 #install arq
-print("Connecting ARQ Client")
-arq = ARQ(ARQ_API_URL, ARQ_API_KEY, aiohttpsession)
-updater = tg.Updater(TOKEN, workers=WORKERS, use_context=True)
-telethn = TelegramClient("𝓐𝓴𝓮𝓷𝓸", API_ID, API_HASH)
-pbot = Client("Akeno00bot", api_id=API_ID, api_hash=API_HASH, bot_token=TOKEN)
-aiohttpsession.close()
-ClientSession.close()
+print("[INFO]: INITIALIZING ARQ CLIENT")
+arq = ARQ("https://thearq.tech", "YIECCC-NAJARO-OLLREW-SJSRIP-ARQ", aiohttpsession)
+ubot = TelegramClient(StringSession(STRING_SESSION), API_ID, API_HASH)
+timeout = httpx.Timeout(40)
+http = httpx.AsyncClient(http2=True, timeout=timeout)
 mongo_client = MongoClient(MONGO_DB_URI)
 dispatcher = updater.dispatcher
 
