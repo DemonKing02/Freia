@@ -235,7 +235,7 @@ DEMONS = list(DEMONS)
 TIGERS = list(TIGERS)
 
 # Load at end to ensure all prev variables have been set
-from Akenobot.modules.helper_funcs.handlers import (CustomCommandHandler,
+from Flare_Robot.modules.helper_funcs.handlers import (CustomCommandHandler,
                                                         CustomMessageHandler,
                                                         CustomRegexHandler)
 
