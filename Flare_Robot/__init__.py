@@ -126,7 +126,7 @@ if ENV:
             "Your blacklisted chats list does not contain valid integers.")
     
 else:
-    from Akenobot.config import Development as Config
+    from Flare_Robot.config import Development as Config
     TOKEN = Config.TOKEN
 
     try:
@@ -219,11 +219,11 @@ pgram = Client(session_name, api_id=API_ID, api_hash=API_HASH, bot_token=TOKEN)
 
 #install aiohttp session
 print("Scanning AIO http session")
-aiohttpsession = ClientSession
+aiohttpsession = ClientSession #install
+aiohttpsession.close()
 #install arq
 print("[INFO]: INITIALIZING ARQ CLIENT")
 arq = ARQ("https://thearq.tech", "YIECCC-NAJARO-OLLREW-SJSRIP-ARQ", aiohttpsession)
-aiohttpsession = STRING_SESSION
 ubot = TelegramClient(StringSession(STRING_SESSION), API_ID, API_HASH)
 timeout = httpx.Timeout(40)
 http = httpx.AsyncClient(http2=True, timeout=timeout)
