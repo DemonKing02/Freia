@@ -235,7 +235,6 @@ updater = tg.Updater(
     TOKEN,
     workers=min(32, os.cpu_count() + 4)
  )
- dispatcher = updater.dispatcher
  print("PYROGRAM CLIENT STARTING")
  session_name = TOKEN.split(":")[0]
  client = TelegramClient(MemorySession(), API_ID, API_HASH)
