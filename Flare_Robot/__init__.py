@@ -233,8 +233,7 @@ telethn = TelegramClient(
 MemorySession(), API_ID, API_HASH)
 updater = tg.Updater( 
     TOKEN,
-    workers=min(32, os.cpu_count() + 4),
-    request_kwargs={"read_timeout": 10"connect_timeout": 10},
+    workers=min(32, os.cpu_count() + 4)
  )
  dispatcher = updater.dispatcher
  print("PYROGRAM CLIENT STARTING")
