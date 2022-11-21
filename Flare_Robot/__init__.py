@@ -1,9 +1,17 @@
 import logging
-import os
-import sys
+import osimport sys
 import time
 import spamwatch
+import httpx
 import aiohttp
+
+from pyrogram.errors.exceptions.bad_request_400 import PeerIdInvalid, ChannelInvalid
+from telethon.sessions import MemorySession
+from motor import motor_asyncio
+from odmantic import AIOEngine
+from pymongo import MongoClient
+from pymongo.errors import ServerSelectionTimeoutError
+from redis import StrictRedis
 
 import telegram.ext as tg
 from redis import StrictRedis
@@ -23,7 +31,7 @@ logging.basicConfig(
               logging.StreamHandler()],
     level=logging.INFO)
 
-LOGGER = logging.getLogger("[Akeno]")
+LOGGER = logging.getLogger("[Freia]")
 
 log = logging.getLogger('[Your Bot Is Building]')
 
