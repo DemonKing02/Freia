@@ -1,5 +1,6 @@
 import logging
-import osimport sys
+import os
+import sys
 import time
 import spamwatch
 import httpx
