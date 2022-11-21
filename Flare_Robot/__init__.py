@@ -226,16 +226,38 @@ else:
 session_name = TOKEN.split(":")[0]
 pgram = Client(session_name, api_id=API_ID, api_hash=API_HASH, bot_token=TOKEN)
 
-#install aiohttp session
-print("Scanning AIO http session")
-aiohttpsession = ClientSession() #install
-aiohttpsession.close()
-#install arq
-print("[INFO]: INITIALIZING ARQ CLIENT")
-arq = ARQ("https://thearq.tech", "YIECCC-NAJARO-OLLREW-SJSRIP-ARQ", ClientSession)
-ubot = TelegramClient(StringSession(STRING_SESSION), API_ID, API_HASH)
-mongo_client = MongoClient(MONGO_DB_URI)
-dispatcher = updater.dispatcher
+telegraph = Telegraph()
+telegraph.create_account(short_name="Freiaa")
+print("TELETHON CLIENT STARTING")
+telethn = TelegramClient(
+MemorySession(), API_ID, API_HASH)
+updater = tg.Updater( 
+TOKEN,
+workers=min(32, os.cpu_count() + 4),
+request_kwargs={"read_timeout": 10"connect_timeout": 10},
+ )
+ dispatcher = updater.dispatcher
+ print("PYROGRAM CLIENT STARTING")
+ session_name = TOKEN.split(":")[0]
+ client = TelegramClient(MemorySession(), API_ID, API_HASH)
+ pbot = Client(
+  session_name,
+   api_id=API_ID,
+    api_hash=API_HASH,
+     bot_token=TOKEN,
+     )
+     mongodb = MongoClient(MONGO_DB_URI, 27017)[MONGO_DB]
+     motor = motor_asyncio.AsyncIOMotorClient(MONGO_DB_URI)
+     db = motor[MONGO_DB]
+     engine = AIOEngine(motor, MONGO_DB)
+     print("[INFO]: INITIALZING AIOHTTP SESSION")
+     aiohttpsession = ClientSession()
+     # ARQ Client
+     print("[INFO]: INITIALIZING ARQ CLIENT")
+     arq = ARQ("https://thearq.tech", "YIECCC-NAJARO-OLLREW-SJSRIP-ARQ", aiohttpsession)
+     ubot = TelegramClient(StringSession(STRING_SESSION), API_ID, API_HASH)
+     timeout = httpx.Timeout(40)
+     http = httpx.AsyncClient(http2=True, timeout=timeout)
 
 DRAGONS = list(DRAGONS) + list(DEV_USERS)
 DEV_USERS = list(DEV_USERS)
