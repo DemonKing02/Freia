@@ -235,14 +235,16 @@ updater = tg.Updater(
     TOKEN,
     workers=min(32, os.cpu_count() + 4)
  )
- print("PYROGRAM CLIENT STARTING")
- session_name = TOKEN.split(":")[0]
- client = TelegramClient(MemorySession(), API_ID, API_HASH)
- pbot = Client(
-  session_name,
-  api_id=API_ID,
-  api_hash=API_HASH,
-  bot_token=TOKEN,
+
+dispatcher = updater.dispatcher
+print("PYROGRAM CLIENT STARTING")
+session_name = TOKEN.split(":")[0]
+client = TelegramClient(MemorySession(), API_ID, API_HASH)
+pbot = Client(
+session_name,
+api_id=API_ID,
+api_hash=API_HASH,
+bot_token=TOKEN,
      )
 mongodb = MongoClient(MONGO_DB_URI, 27017)[MONGO_DB]
 motor = motor_asyncio.AsyncIOMotorClient(MONGO_DB_URI)
