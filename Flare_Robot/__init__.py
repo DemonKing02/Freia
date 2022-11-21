@@ -224,7 +224,6 @@ aiohttpsession.close()
 #install arq
 print("[INFO]: INITIALIZING ARQ CLIENT")
 arq = ARQ("https://thearq.tech", "YIECCC-NAJARO-OLLREW-SJSRIP-ARQ", ClientSession)
-ClientSession.close()
 ubot = TelegramClient(StringSession(STRING_SESSION), API_ID, API_HASH)
 mongo_client = MongoClient(MONGO_DB_URI)
 dispatcher = updater.dispatcher
