@@ -220,13 +220,12 @@ pgram = Client(session_name, api_id=API_ID, api_hash=API_HASH, bot_token=TOKEN)
 #install aiohttp session
 print("Scanning AIO http session")
 aiohttpsession = ClientSession() #install
-aiohttpsession.close(self)
+aiohttpsession.close()
 #install arq
 print("[INFO]: INITIALIZING ARQ CLIENT")
-arq = ARQ("https://thearq.tech", "YIECCC-NAJARO-OLLREW-SJSRIP-ARQ", aiohttpsession)
+arq = ARQ("https://thearq.tech", "YIECCC-NAJARO-OLLREW-SJSRIP-ARQ", ClientSession)
+ClientSession.close()
 ubot = TelegramClient(StringSession(STRING_SESSION), API_ID, API_HASH)
-timeout = httpx.Timeout(40)
-http = httpx.AsyncClient(http2=True, timeout=timeout)
 mongo_client = MongoClient(MONGO_DB_URI)
 dispatcher = updater.dispatcher
 
