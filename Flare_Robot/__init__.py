@@ -219,8 +219,8 @@ pgram = Client(session_name, api_id=API_ID, api_hash=API_HASH, bot_token=TOKEN)
 
 #install aiohttp session
 print("Scanning AIO http session")
-aiohttpsession = ClientSession #install
-aiohttpsession.close()
+aiohttpsession = ClientSession() #install
+aiohttpsession.close(self)
 #install arq
 print("[INFO]: INITIALIZING ARQ CLIENT")
 arq = ARQ("https://thearq.tech", "YIECCC-NAJARO-OLLREW-SJSRIP-ARQ", aiohttpsession)
